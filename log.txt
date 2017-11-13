@@ -1,0 +1,255 @@
+POST /api/updateUser 209ms 
+POST /api/listUser 7ms 
+POST /api/login 177ms 
+【非法请求链接：/api/listSort】POST /api/listSort 0ms 
+server errorError: Table 'monitor.article' doesn't exist
+{"request":{"method":"POST","url":"/api/listArticle","header":{"cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj","accept-language":"zh-CN,zh;q=0.8","accept-encoding":"gzip, deflate, br","referer":"http://localhost:3000/article/list","content-type":"application/x-www-form-urlencoded; charset=UTF-8","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjEuMC4zMTYzLjEwMCBTYWZhcmkvNTM3LjM2IiwiaWQiOjEsInVzZXJfbmFtZSI6ImFkbWluIiwidXNlcl90eXBlIjoyLCJ1c2VyX2VtYWlsIjoiMzQ4NzM2NDc3QHFxLmNvbSIsImNyZWF0ZV90aW1lIjoiMjAxNy0xMC0xOFQwNzo1MzoyOC4wMDBaIiwibG9naW5faXAiOiIiLCJ1cGRhdGVfdGltZSI6bnVsbCwidXNlcl9waWMiOiIiLCJpYXQiOjE1MDgzMTM3OTcsImV4cCI6MTUwODMyMDk5N30.-yx10V5XyCznDZgmiFtIh3vpjMIK2sZA111dVOYHXoY","origin":"http://localhost:3000","accept":"application/json, text/plain, */*","content-length":"45","connection":"close","host":"localhost:8000"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/listArticle","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/listSort 1ms 
+【非法请求链接：/api/listSort】server errorError: Table 'monitor.article' doesn't exist
+{"request":{"method":"POST","url":"/api/listArticle","header":{"cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj","accept-language":"zh-CN,zh;q=0.8","accept-encoding":"gzip, deflate, br","referer":"http://localhost:3000/article/list","content-type":"application/x-www-form-urlencoded; charset=UTF-8","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjEuMC4zMTYzLjEwMCBTYWZhcmkvNTM3LjM2IiwiaWQiOjEsInVzZXJfbmFtZSI6ImFkbWluIiwidXNlcl90eXBlIjoyLCJ1c2VyX2VtYWlsIjoiMzQ4NzM2NDc3QHFxLmNvbSIsImNyZWF0ZV90aW1lIjoiMjAxNy0xMC0xOFQwNzo1MzoyOC4wMDBaIiwibG9naW5faXAiOiIiLCJ1cGRhdGVfdGltZSI6bnVsbCwidXNlcl9waWMiOiIiLCJpYXQiOjE1MDgzMTM3OTcsImV4cCI6MTUwODMyMDk5N30.-yx10V5XyCznDZgmiFtIh3vpjMIK2sZA111dVOYHXoY","origin":"http://localhost:3000","accept":"application/json, text/plain, */*","content-length":"45","connection":"close","host":"localhost:8000"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/listArticle","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+server errorError: Table 'monitor.article' doesn't exist
+{"request":{"method":"POST","url":"/api/listArticle","header":{"cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj","accept-language":"zh-CN,zh;q=0.8","accept-encoding":"gzip, deflate, br","referer":"http://localhost:3000/article/list","content-type":"application/x-www-form-urlencoded; charset=UTF-8","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjEuMC4zMTYzLjEwMCBTYWZhcmkvNTM3LjM2IiwiaWQiOjEsInVzZXJfbmFtZSI6ImFkbWluIiwidXNlcl90eXBlIjoyLCJ1c2VyX2VtYWlsIjoiMzQ4NzM2NDc3QHFxLmNvbSIsImNyZWF0ZV90aW1lIjoiMjAxNy0xMC0xOFQwNzo1MzoyOC4wMDBaIiwibG9naW5faXAiOiIiLCJ1cGRhdGVfdGltZSI6bnVsbCwidXNlcl9waWMiOiIiLCJpYXQiOjE1MDgzMTM3OTcsImV4cCI6MTUwODMyMDk5N30.-yx10V5XyCznDZgmiFtIh3vpjMIK2sZA111dVOYHXoY","origin":"http://localhost:3000","accept":"application/json, text/plain, */*","content-length":"45","connection":"close","host":"localhost:8000"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/listArticle","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/listArticle 57ms 
+POST /api/listArticle 7ms 
+POST /api/listArticle 60ms 
+POST /api/listArticle 62ms 
+POST /report 3ms 
+POST /report 0ms 
+POST /report 0ms 
+POST /report 0ms 
+POST /report 0ms 
+POST /report 0ms 
+POST /report 1ms 
+POST /report 2ms 
+POST /api/report 25ms 
+POST /api/report 2ms 
+POST /api/report 21ms 
+POST /api/report 91ms 
+【token验证错误！】POST /api/listArticle 29ms 
+POST /api/login 131ms 
+POST /api/listArticle 8ms 
+POST /api/report 92ms 
+POST /api/listArticle 14ms 
+POST /api/listArticle 63ms 
+POST /api/listArticle 24ms 
+POST /api/listArticle 9ms 
+POST /api/listArticle 13ms 
+POST /api/listArticle 6ms 
+POST /api/listArticle 5ms 
+POST /api/listArticle 8ms 
+POST /api/login 203ms 
+POST /api/listArticle 52ms 
+POST /api/listArticle 16ms 
+【token验证错误！】POST /api/login 144ms 
+POST /api/listArticle 9ms 
+POST /api/report 82ms 
+POST /api/listArticle 33ms 
+POST /api/report 96ms 
+POST /api/listSort 0ms 
+【非法请求链接：/api/listSort】POST /api/listArticle 11ms 
+【非法请求链接：/api/listSort】POST /api/listSort 1ms 
+POST /api/listArticle 31ms 
+POST /api/report 52ms 
+【非法请求链接：/api/listSort】POST /api/listSort 0ms 
+POST /api/listArticle 22ms 
+POST /api/listArticle 6ms 
+POST /api/listArticle 8ms 
+【非法请求链接：/api/listSort】POST /api/listSort 0ms 
+POST /api/listArticle 7ms 
+POST /api/listArticle 12ms 
+【非法请求链接：/api/listReport】POST /api/listReport 0ms 
+【非法请求链接：/api/listReport】POST /api/listReport 0ms 
+POST /api/listReport 59ms 
+POST /api/listReport 31ms 
+POST /api/listReport 34ms 
+POST /api/listReport 24ms 
+POST /api/listReport 10ms 
+POST /api/listReport 8ms 
+POST /api/deleteReport 1ms 
+【对不起您无权操作！】POST /api/listReport 7ms 
+POST /api/deleteReport 82ms 
+POST /api/listReport 11ms 
+POST /api/deleteReport 60ms 
+POST /api/listReport 10ms 
+POST /api/listReport 17ms 
+POST /api/listReport 6ms 
+POST /api/listReport 9ms 
+POST /api/deleteReport 43ms 
+POST /api/listReport 4ms 
+POST /api/listReport 8ms 
+POST /api/login 160ms 
+POST /api/listReport 35ms 
+POST /api/deleteReport 48ms 
+POST /api/listReport 8ms 
+POST /api/listReport 8ms 
+POST /api/listReport 10ms 
+POST /api/listReport 17ms 
+POST /api/deleteReport 38ms 
+POST /api/listReport 8ms 
+POST /api/listUser 5ms 
+server errorError: Table 'monitor.upload' doesn't exist
+{"request":{"method":"POST","url":"/api/listUpFile","header":{"cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj","accept-language":"zh-CN,zh;q=0.8","accept-encoding":"gzip, deflate, br","referer":"http://localhost:3000/upfile/list","content-type":"application/x-www-form-urlencoded; charset=UTF-8","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjEuMC4zMTYzLjEwMCBTYWZhcmkvNTM3LjM2IiwiaWQiOjEsInVzZXJfbmFtZSI6ImFkbWluIiwidXNlcl90eXBlIjoyLCJ1c2VyX2VtYWlsIjoiMzQ4NzM2NDc3QHFxLmNvbSIsImNyZWF0ZV90aW1lIjoiMjAxNy0xMC0xOFQwNzo1MzoyOC4wMDBaIiwibG9naW5faXAiOiIxMjcuMC4wLjEiLCJ1cGRhdGVfdGltZSI6IjIwMTctMTAtMThUMDg6MDM6MTcuMDAwWiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNTA4Mzc5MDMyLCJleHAiOjE1MDgzODYyMzJ9.oTy_3AS-3WVSzFkPW-blw2HwzC66D-D7Q5dEm1Qy010","origin":"http://localhost:3000","accept":"application/json, text/plain, */*","content-length":"18","connection":"close","host":"localhost:8000"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/listUpFile","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/listUser 5ms 
+POST /api/listUpFile 9ms 
+POST /api/listUser 34ms 
+POST /api/listReport 31ms 
+POST /api/listUpFile 36ms 
+POST /api/listUser 14ms 
+POST /api/listReport 6ms 
+POST /api/listReport 8ms 
+POST /api/listReport 12ms 
+POST /api/listReport 12ms 
+POST /api/listReport 12ms 
+POST /api/listReport 53ms 
+POST /api/listReport 10ms 
+POST /api/listReport 9ms 
+POST /api/listReport 20ms 
+POST /api/listReport 30ms 
+POST /api/listReport 54ms 
+POST /api/listReport 21ms 
+POST /api/listReport 20ms 
+POST /api/report 106ms 
+POST /api/report 66ms 
+POST /api/report 126ms 
+POST /api/report 102ms 
+server errorError: Unknown column 'referer' in 'field list'
+{"request":{"method":"POST","url":"/api/report","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"214","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=jdbfmm6gdvr3d0budmabaed5dm","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/report","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/login 154ms 
+POST /api/listReport 7ms 
+POST /api/report 107ms 
+POST /api/listReport 31ms 
+POST /api/listReport 20ms 
+server errorError: Unknown column 'referer' in 'field list'
+{"request":{"method":"POST","url":"/api/report","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"214","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=jdbfmm6gdvr3d0budmabaed5dm","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/report","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+server errorError: Unknown column 'referer' in 'field list'
+{"request":{"method":"POST","url":"/api/report","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"214","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=jdbfmm6gdvr3d0budmabaed5dm","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/report","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/report 100ms 
+POST /api/listReport 13ms 
+POST /api/listReport 44ms 
+POST /api/report 225ms 
+POST /api/listReport 84ms 
+POST /api/listReport 33ms 
+POST /api/listReport 24ms 
+POST /api/listReport 26ms 
+POST /api/listReport 7ms 
+POST /api/listReport 5ms 
+POST /api/listReport 19ms 
+POST /api/listReport 9ms 
+POST /api/listReport 10ms 
+POST /api/listReport 9ms 
+POST /api/listReport 6ms 
+POST /api/listReport 5ms 
+POST /api/listReport 7ms 
+POST /api/listReport 8ms 
+POST /api/listReport 5ms 
+POST /api/listReport 8ms 
+POST /api/listReport 10ms 
+POST /api/report 14ms 
+POST /api/report 1ms 
+POST /api/report 1ms 
+POST /api/report 1ms 
+GET /favicon.ico 35ms 
+POST /api/listReport 42ms 
+POST /api/login 200ms 
+POST /api/listReport 375ms 
+POST /api/listUpFile 62ms 
+POST /api/upFile 153ms 
+POST /api/upUserPic 40ms 
+POST /api/listReport 23ms 
+POST /api/listUpFile 6ms 
+POST /api/listUser 5ms 
+POST /api/login 138ms 
+POST /api/login 104ms 
+server errorError: Unknown column 'occurrence' in 'field list'
+{"request":{"method":"POST","url":"/api/report","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"47","cache-control":"max-age=0","origin":"http://localhost:63342","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","content-type":"text/plain;charset=UTF-8","accept":"*/*","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=morukacg4gv05dvo5vhqp21tps","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/report","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/report 32ms 
+POST /api/report 5ms 
+POST /api/report 18ms 
+POST /api/report 2ms 
+POST /api/report 21ms 
+POST /api/report 3ms 
+POST /api/report 49ms 
+POST /api/report 16ms 
+server errorTypeError: Cannot read property 'ReadableState' of undefined
+{"request":{"method":"POST","url":"/api/report","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"582","cache-control":"max-age=0","origin":"http://localhost:63342","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","content-type":"multipart/form-data; boundary=----WebKitFormBoundaryi83b89td9yiaJ2Bd","accept":"*/*","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=morukacg4gv05dvo5vhqp21tps","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/report","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/report 20ms 
+POST /api/report 17ms 
+POST /api/report 4ms 
+POST /api/report 2ms 
+POST /api/report 30ms 
+POST /api/report 2ms 
+POST /api/report 26ms 
+POST /api/report 15ms 
+POST /api/report 18ms 
+POST /api/report 24ms 
+POST /api/report 19ms 
+POST /api/report 27ms 
+POST /api/beacon 2ms 
+POST /api/beacon 43ms 
+POST /api/beacon 41ms 
+POST /api/beacon 40ms 
+server errorTypeError: data.occurrence.substring is not a function
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"126","cache-control":"max-age=0","origin":"http://localhost:63342","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","content-type":"text/plain;charset=UTF-8","accept":"*/*","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=fqd3bdo8q1v6k07018d5pru2ck","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/beacon 44ms 
+POST /api/beacon 40ms 
+POST /api/beacon 27ms 
+POST /api/login 172ms 
+POST /api/login 90ms 
+POST /api/login 135ms 
+POST /api/listReport 23ms 
+POST /api/changePassword 224ms 
+POST /api/login 103ms 
+POST /api/listReport 7ms 
+POST /api/upFile 133ms 
+POST /api/upUserPic 47ms 
+POST /api/listReport 6ms 
+server errorReferenceError: saveReport is not defined
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"116","cache-control":"max-age=0","origin":"http://localhost:63342","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","content-type":"text/plain;charset=UTF-8","accept":"*/*","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/beacon 101ms 
+POST /api/listReport 38ms 
+POST /api/listReport 36ms 
+POST /api/listReport 29ms 
+POST /api/listReport 19ms 
+POST /api/listReport 9ms 
+POST /api/listReport 9ms 
+POST /api/listReport 6ms 
+POST /api/listReport 70ms 
+POST /api/upFile 159ms 
+POST /api/upUserPic 165ms 
+GET /upFile/1509006188717.jpg 71ms 
+GET /upFile/1509006188717.jpg 2ms 
+POST /api/listReport 13ms 
+GET /upFile/1509006188717.jpg 1ms 
+POST /api/listReport 11ms 
+GET /upFile/1509006188717.jpg 1ms 
+POST /api/listReport 11ms 
+GET /upFile/1509006188717.jpg 1ms 
+POST /api/listReport 14ms 
+server errorBadRequestError: request aborted
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"102","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+server errorBadRequestError: request aborted
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"102","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/report 49ms 
+POST /api/report 49ms 
+server errorBadRequestError: request aborted
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"102","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+server errorBadRequestError: request aborted
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"102","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+server errorBadRequestError: request aborted
+{"request":{"method":"POST","url":"/api/beacon","header":{"host":"localhost:8000","connection":"keep-alive","content-length":"102","cache-control":"max-age=0","origin":"http://localhost:63342","upgrade-insecure-requests":"1","content-type":"application/x-www-form-urlencoded","user-agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","referer":"http://localhost:63342/scscms/badjs-report/test/test.html?_ijt=rgbo59tem10nepn2solkr8bggo","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.8","cookie":"Webstorm-857aad=b3d0a6f1-6810-4f4a-bd38-f181851c2ad6; _qddaz=QD.53csqp.1ei0a3.j8vatprj"}},"response":{"status":404,"message":"Not Found","header":{}},"app":{"subdomainOffset":2,"proxy":false,"env":"development"},"originalUrl":"/api/beacon","req":"<original node req>","res":"<original node res>","socket":"<original node socket>"}
+POST /api/beacon 58ms 
+GET /upFile/1509006188717.jpg 1ms 
+POST /api/listReport 7ms 
+POST /api/beacon 39ms 
+GET /upFile/1509006188717.jpg 2ms 
+POST /api/listReport 8ms 
+POST /api/listUpFile 14ms 
+GET /upFile/1508469233582.jpg 1ms 
+GET /upFile/1509005211819.jpg 1ms 
+POST /api/listUser 7ms 
+POST /api/login 142ms 
+POST /api/listReport 21ms 
+POST /api/deleteReport 58ms 
+POST /api/listReport 8ms 
+POST /api/listReport 5ms 
+POST /api/listReport 5ms 
