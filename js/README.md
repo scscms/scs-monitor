@@ -34,25 +34,29 @@ monitor.push({
 
 #### 立刻上报日志beacon方法
 ```
-monitor.beacon(obj)
+monitor.beacon(obj?)
 ```
 
 #### 立刻上报日志report方法
 ```
-monitor.report(obj)
+monitor.report(obj?)
 ```
 
-#### beacon\report方法说明
+#### beacon和report方法说明
 
-两种方法使用参数一样，当有参数时只上报当次错误信息，无参数时上报所有队列错误。
-report使用的是iframe表单形式上报日志，兼容所有浏览器。beacon使用的是浏览器[navigator.sendBeacon](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)接口，具有不阻塞网站加载效果，环保方便。
+两种方法参数一样（需要上报的一条日志，可选），当有参数时只上报此错误日志，无参数时上报所有队列日志。
+report使用的是iframe表单形式上报日志，兼容所有浏览器。beacon使用的是浏览器[navigator.sendBeacon](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)接口，不支持IE等低版本浏览器。具有不阻塞网站加载效果，环保卫生。
+
+---
 
 ### vue版本vue_monitor.js
 - 不支持report()方法；
 - 浏览器不支持navigator.sendBeacon将无法使用；
 
+#### 使用方法：
+
 ```
-import monitor from 'utils/monitor'
+import monitor from './js/vue_monitor'
 Vue.use(monitor);
 ```
 
@@ -65,15 +69,18 @@ mounted(){
 }
 
 ```
-然后要在适当的位置调用this.$monitor.beacon();建议在用户退出操作里。
+然后要在适当的位置调用`this.$monitor.beacon();`建议在用户退出操作里。
 
 ### 普通js版本js_monitor.js
-- 兼容所有浏览器，在不支持navigator.sendBeacon浏览器下调用beacon()将自动引用report()；
+
+- 兼容所有浏览器，在不支持navigator.sendBeacon的浏览器下调用beacon()将会自动转调report()；
+
+#### 使用方法：
 
 ```
-import 'utils/monitor'
+import './js/js_monitor'
 ```
-或&lt;script src="utils/monitor.js"&gt;&lt;/script&gt;
+或&lt;script src="js/js_monitor.js"&gt;&lt;/script&gt;
 
 ```
 MONITOR.push({
@@ -82,4 +89,4 @@ MONITOR.push({
         url:'错误来源页（可选）为空时自动取location.href值'
     })
 ```
-MONITOR为全局变量。
+即MONITOR为全局变量。
