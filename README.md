@@ -4,6 +4,8 @@
 
     监测各系统前端异常错误，旨在及时了解和掌握各系统问题，及时修复。
 
+![image](web.png)
+
 ### 项目fork
 
 本系统后台存储基于[vue-scscms](https://github.com/scscms/vue-scscms)系统。
