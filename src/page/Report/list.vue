@@ -5,7 +5,7 @@
                 <el-form-item>
                     <el-input size="small" placeholder="错误标题" v-model="search_data.title"></el-input>
                 </el-form-item>
-                <el-form-item>
+                <el-form-item v-if="showSort">
                     <el-select size="small" placeholder="选择项目" clearable v-model="search_data.sort_id">
                         <el-option v-for="(value,key) in sort_type" :key="key"
                                    :label="value" :value="key">
@@ -68,6 +68,7 @@
                 },
                 userInfo:{},
                 dateRange:'',
+                showSort:!0,
                 search_data: {
                     title: '',
                     sort_id: '',
@@ -82,15 +83,28 @@
                 table_data: {
                     columns: [
                         {"key": "code", "name": "项目", width: 115},
-                        {"key": "title", "name": "错误标题", minWidth: 120},
-                        {"key": "amount", "name": "数量", width: 80},
-                        {"key": "info", "name": "错误信息", minWidth: 220},
-                        {"key": "occurrence", "name": "错误时间", width:175}
+                        {"key": "title", "name": "监控标题", minWidth: 120},
+                        {"key": "amount", "name": "统计", width: 80},
+                        {"key": "info", "name": "监控信息", minWidth: 220},
+                        {"key": "occurrence", "name": "监控时间", width:175}
                     ],
                     total: 0,
                     data: []
                 }
             }
+        },
+        created(){
+            //特定用户
+            storage.get('userInfo',obj=>{
+                const t = common.sort_type;
+                let name = obj.userInfo.user_name;
+                Object.keys(t).forEach(k=>{
+                    if(name === t[k]){
+                        this.showSort = !1;
+                        this.search_data.sort_id = k;
+                    }
+                })
+            });
         },
         methods: {
             deleteReport(arr){
@@ -127,6 +141,8 @@
                     }else{
                         str = row.create_time;
                     }
+                }else if(key === 'title' && str.includes('API:')){
+                    str += '请求耗时(毫秒)';
                 }else if(key === 'code'){
                     str = common.sort_type[str]||'未知';
                 }

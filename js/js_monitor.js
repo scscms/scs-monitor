@@ -2,7 +2,7 @@
  * Created by 10057959 on 2017/10/17.
  */
 
-var MONITOR = (function(W) {
+module.exports = (function(W) {
     var G = W.MONITOR;
     if (G) return G;
     var F = {
@@ -27,18 +27,23 @@ var MONITOR = (function(W) {
         isIgnore:function(msg){
             //必须有title和info属性,然后才抽样
             var ignore = msg.title && msg.info ? F.random <= Math.random() : true;
-            //处理一下数据
-            msg.title = msg.title.substring(0,200);
-            msg.info = msg.info.substring(0,200);
-            msg.url = (msg.url||location.href).substring(0,200);
-            msg.occurrence = Date.now();
-            msg.amount = 1;//累计错误次数
-            if (!ignore && T.isType(F.ignore, "Array")) {
-                for (var i = F.ignore.length;i--;) {
-                    var _s = F.ignore[i];
-                    if (T.isType(_s, "RegExp") && _s.test(msg.title) || T.isType(_s, "String") && msg.title.includes(_s)) {
-                        ignore = true;
-                        break;
+            if(!ignore){
+                //处理一下数据
+                msg.title = msg.title.substring(0,200);
+                msg.url = (msg.url||location.href).substring(0,200);
+                msg.occurrence = Date.now();
+                msg.amount = 1;
+                if(isNaN(msg.info)||!/^API:/.test(msg.title)){
+                    msg.title = msg.title.replace(/API:/g,'');//过滤非法字符
+                    msg.info = msg.info.toString().substring(0,200);
+                }
+                if (T.isType(F.ignore, "Array")) {
+                    for (var i = F.ignore.length;i--;) {
+                        var _s = F.ignore[i];
+                        if (T.isType(_s, "RegExp") && _s.test(msg.title) || T.isType(_s, "String") && msg.title.includes(_s)) {
+                            ignore = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -63,6 +68,11 @@ var MONITOR = (function(W) {
                     }
                 }
             }
+            //判断条件自动上报
+            let l = localStorage.getItem(F.key+'_Date');
+            let t = new Date().toDateString();
+            /\d/.test(l) && l !== t && this.beacon();
+            localStorage.setItem(F.key+'_Date',t);
         },
         //先缓存不上报
         push:function(msg){
@@ -74,80 +84,44 @@ var MONITOR = (function(W) {
             for(var i = arr.length;i--;){
                 if(arr[i].title === msg.title){
                     has = true;
-                    arr[i].amount ++;
+                    if(/^API:/.test(msg.title)){
+                        arr[i].info.push(msg.info);
+                    }else{
+                        arr[i].amount ++;
+                    }
                     break;
                 }
             }
-            !has && arr.push(msg);
+            if(!has){
+                if(/^API:/.test(msg.title)){
+                    msg.info = [msg.info];
+                }
+                arr.push(msg);
+            }
             localStorage.setItem(F.key,JSON.stringify(arr));
         },
         //开始上报
         beacon:function(msg){
-            if(!navigator.sendBeacon){
-                F.url = F.url.replace('beacon','report');
-                return W.MONITOR.report(msg);
-            }
             var isObj = T.isType(msg);
             var arr = T.getStorage();
             if(isObj){
                 if(T.isIgnore(msg))return;//不在抽样范围内或是忽略的错误
                 arr = [msg];
             }
+            arr.forEach(o=>{
+                if(/^API:/.test(o.title)){
+                    o.amount = o.info.reduce((a,v)=>a+v,0)/o.info.length >> 0;
+                    o.info = o.info.join();
+                }
+            });
             if(arr.length){
                 //如果全量上报且上报成功，删除缓存
                 navigator.sendBeacon(F.url,JSON.stringify({code:F.code,uin:F.uin,list:arr})) && !isObj && localStorage.removeItem(F.key);
             }
-        },
-        //兼容性上报(兼容IE)
-        report:function(msg){
-            var isObj = T.isType(msg);
-            var arr = T.getStorage();
-            if(isObj){
-                if(T.isIgnore(msg))return;//不在抽样范围内或是忽略的错误
-                arr = [msg];
-            }
-            if(arr.length){
-                var createInput = function(name,value,fam){
-                    var input = document.createElement("input");
-                    input.type = "hidden";
-                    input.name = name;
-                    input.value = value;
-                    fam.appendChild(input);
-                };
-                var iframe = document.createElement("iframe");
-                iframe.style.display = "none";
-                iframe.name = "scs" + Math.random().toString(16).slice(-8);
-                iframe.src = "javascript:false;";
-                var form = document.createElement("form");
-                var _c = 0;
-                form.method = "POST";
-                form.target = iframe.name;
-                form.action = F.url.replace('beacon','report');
-                document.body.appendChild(form);
-                iframe.onload = function (){
-                    if(++_c === 2){
-                        !isObj && localStorage.removeItem(F.key);//清空数据
-                        document.body.removeChild(iframe);
-                        document.body.removeChild(form);
-                    }
-                };
-                document.body.appendChild(iframe);
-                var fragment = document.createDocumentFragment();
-                createInput("code", F.code,fragment);
-                createInput("uin", F.uin,fragment);
-                arr.forEach(function(obj){
-                    createInput("title", obj.title,fragment);
-                    createInput("amount", obj.amount,fragment);
-                    createInput("info", obj.info,fragment);
-                    createInput("occurrence", obj.occurrence,fragment);
-                    createInput("url", obj.url,fragment);
-                });
-                form.appendChild(fragment);
-                form.submit();
-            }
         }
     };
 }(window));
+
 if (typeof module !== "undefined") {
     module.exports = MONITOR;
 }

@@ -30,18 +30,23 @@ const monitor = (function(W,D) {
         isIgnore:function(msg){
             //必须有title和info属性,然后才抽样
             let ignore = msg.title && msg.info ? F.random <= Math.random() : true;
-            //处理一下数据
-            msg.title = msg.title.substring(0,200);
-            msg.info = msg.info.substring(0,200);
-            msg.url = (msg.url||W.location.href).substring(0,200);
-            msg.occurrence = Date.now();
-            msg.amount = 1;//累计错误次数
-            if (!ignore && T.isType(F.ignore, "Array")) {
-                for (let i = F.ignore.length;i--;) {
-                    let _s = F.ignore[i];
-                    if (T.isType(_s, "RegExp") && _s.test(msg.title) || T.isType(_s, "String") && msg.title.includes(_s)) {
-                        ignore = true;
-                        break;
+            if(!ignore){
+                //处理一下数据
+                msg.title = msg.title.substring(0,200);
+                msg.url = (msg.url||W.location.href).substring(0,200);
+                msg.occurrence = Date.now();
+                msg.amount = 1;
+                if(!Number.isInteger(msg.info)||!msg.title.startsWith('API:')){
+                    msg.title = msg.title.replace(/API:/g,'');//过滤非法字符
+                    msg.info = msg.info.toString().substring(0,200);
+                }
+                if (T.isType(F.ignore, "Array")) {
+                    for (let i = F.ignore.length;i--;) {
+                        let _s = F.ignore[i];
+                        if (T.isType(_s, "RegExp") && _s.test(msg.title) || T.isType(_s, "String") && msg.title.includes(_s)) {
+                            ignore = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -69,7 +74,11 @@ const monitor = (function(W,D) {
             for(let i = arr.length;i--;){
                 if(arr[i].title === msg.title){
                     has = true;
-                    arr[i].amount ++;
+                    if(msg.hasOwnProperty('average')){
+                        arr[i].info.push(msg.average);
+                    }else{
+                        arr[i].amount ++;
+                    }
                     break;
                 }
             }
@@ -84,6 +93,12 @@ const monitor = (function(W,D) {
                 if(T.isIgnore(msg))return;//不在抽样范围内或是忽略的错误
                 arr = [msg];
             }
+            arr.forEach(o=>{
+                if(o.title.startsWith('API:')){
+                    o.amount = o.info.reduce((a,v)=>a+v,0)/o.info.length >> 0;//求平均值
+                    o.info = o.info.join();
+                }
+            });
             if(arr.length){
                 //如果全量上报且上报成功，删除缓存
                 navigator.sendBeacon(F.url,JSON.stringify({code:F.code,uin:F.uin,list:arr})) && !isObj && localStorage.removeItem(F.key);
@@ -143,10 +158,11 @@ export default {
     install: function(Vue) {
         if (typeof process === 'undefined' || process.browser) {
             Vue.config.errorHandler = function (err, vm, info) {
-                let name = '未知';
-                try{
-                    name = vm.constructor.options.name;
-                }catch (e){}
+                let name = 'root instance';
+                if (vm.$root !== vm) {
+                    name = vm._isVue ? vm.$options.name || vm.$options._componentTag : vm.name;
+                    name = (name ? 'component <' + name + '>' : 'anonymous component') + (vm._isVue && vm.$options.__file ? ' at ' + vm.$options.__file : '');
+                }
                 monitor.push({
                     title:`VUE组件：${name} 源自：${info} 错误`,
                     info: err.message ? err.name + ':' + err.message : err

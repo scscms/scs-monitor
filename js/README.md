@@ -1,6 +1,6 @@
-# 前端监控系统<sup>monitor</sup>上报插件
+# 前端监控系统<sup>monitor</sup>上报插件V2.0
 
-### 上报方法
+### 使用方法
 
 #### 初始化init
 
@@ -32,26 +32,35 @@ monitor.push({
         })
 ```
 
-#### 立刻上报日志beacon方法
+#### 添加API请求耗时日志（新）：
+
+```
+monitor.push({
+	title: 'API:'+url.match(/(?:.*\/)*([^?]+)/)[1],
+    url: url,
+    info: time
+});
+
+```
+
+- url:请求的API接口地址
+- time:请求API耗时（毫秒）
+
+#### 立刻上报日志beacon方法(不推荐)
+
 ```
 monitor.beacon(obj?)
 ```
 
-#### 立刻上报日志report方法
-```
-monitor.report(obj?)
-```
+`V2.0版本由init初始化函数里自动判断是否需要上报，并且已经删除report方法`
 
-#### beacon和report方法说明
+#### beacon方法说明
 
-两种方法参数一样（需要上报的一条日志，可选），当有参数时只上报此错误日志，无参数时上报所有队列日志。
-report使用的是iframe表单形式上报日志，兼容所有浏览器。beacon使用的是浏览器[navigator.sendBeacon](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)接口，不支持IE等低版本浏览器。具有不阻塞网站加载效果，环保卫生。
+beacon使用的是浏览器[navigator.sendBeacon](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)接口，不支持IE等低版本浏览器。具有不阻塞网站加载效果。
 
 ---
 
 ### vue版本vue_monitor.js
-- 不支持report()方法；
-- 浏览器不支持navigator.sendBeacon将无法使用；
 
 #### 使用方法：
 
@@ -60,33 +69,8 @@ import monitor from './js/vue_monitor'
 Vue.use(monitor);
 ```
 
-```
-mounted(){
-	this.$monitor.push({
-        title:'test日志',
-        info:'测试日志'
-    });
-}
+#### 调用方法：
 
-```
-然后要在适当的位置调用`this.$monitor.beacon();`建议在用户退出操作里。
+参考上面方法，把`monitor`替换成`this.$monitor`即可。
 
-### 普通js版本js_monitor.js
-
-- 兼容所有浏览器，在不支持navigator.sendBeacon的浏览器下调用beacon()将会自动转调report()；
-
-#### 使用方法：
-
-```
-import './js/js_monitor'
-```
-或&lt;script src="js/js_monitor.js"&gt;&lt;/script&gt;
-
-```
-MONITOR.push({
-        title: '错误标题',
-        info: '错误详情',
-        url:'错误来源页（可选）为空时自动取location.href值'
-    })
-```
-即MONITOR为全局变量。
+非特殊原因请不要调用this.$monitor.beacon()全量上报或this.$monitor.beacon(obj)单条日志上报，节省请求。
