@@ -14,9 +14,6 @@ import {storage} from 'utils';
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 
-import monitor from '../js/vue_monitor';
-Vue.use(monitor);
-
 import routes from './routes.js';
 
 //页面顶部进度条
