@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>monitor test</title>
+</head>
+<body>
+<button type="button" onclick="fun('err')">捕捉错误</button>
+<button type="button" onclick="fun('log')">插入日志</button>
+<button type="button" onclick="fun('api')">API耗时</button>
+<button type="button" onclick="fun('append')">插入外链</button>
+<button type="button" onclick="fun('beacon')">批量上报</button>
+<button type="button" onclick="fun('clear')">清空缓存</button>
+<div style="margin-top: 10px">
+    <textarea name="log" id="log" cols="80" rows="20"></textarea>
+</div>
+
+<script type="text/javascript" src="../js/monitor.js"></script>
+<script type="text/javascript">
+    function fun(type) {
+        switch (type){
+            case 'err':
+                let a = b + 1;
+                break;
+            case 'api':
+                let url = 'http://localhost:8000/api';
+                let time = Math.random()*1000 >> 0;
+                monitor.push({
+                    title: 'API:'+url.match(/(?:.*\/)*([^?]+)/)[1],
+                    url: url,
+                    info: time
+                });
+                break;
+            case 'log':
+                monitor.push({
+                    title: 'API:手动添加日志',
+                    info: '因本条不是API统计，所以title会过滤`API:`字符！'
+                });
+                break;
+            case 'append':
+                let js = document.createElement('script');
+                js.src = 'http://www.baidu.com/js.js';
+                document.body.appendChild(js);
+                break;
+            case 'beacon':
+                monitor.beacon();
+                break;
+            case 'clear':
+                localStorage.removeItem(F.key);
+                break;
+            default:
+        }
+    }
+    let F = monitor.init({
+        code: 'test',
+        url:'http://10.0.10.43:8000/api/beacon'
+        //url:'http://localhost:8000/api/beacon'
+    });
+    console.log(monitor);
+    let log = document.getElementById('log');
+    setInterval(function(){
+        log.value = localStorage.getItem(F.key);
+    },1000);
+</script>
+</body>
+</html>

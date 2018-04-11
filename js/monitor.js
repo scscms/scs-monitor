@@ -1,6 +1,7 @@
-//功能：前端监控vue插件
-
-const monitor = (function(W,D){
+/**
+ * 高版本浏览器使用：Chrome39+ Edge Firefox(31) Opera(26) 即必须支持navigator.sendBeacon
+ */
+const monitor = (function(W,D) {
     const F = {
         code: '', // 上报的code标识
         uin: '', // 用户
@@ -150,7 +151,7 @@ const monitor = (function(W,D){
         _w.call(D, str);fun(str,'Document.write');
     };
     Object.defineProperty(Element.prototype, "innerHTML", {
-        set(str) {
+        set (str) {
             _i.set.call(this, str);fun(str,'innerHTML');
         }
     });
@@ -171,28 +172,6 @@ const monitor = (function(W,D){
     return monitor;
 }(window,document));
 
-export default {
-    install(Vue) {
-        if (typeof process === 'undefined' || process.browser) {
-            Vue.config.productionTip = !1;//阻止 vue 在启动时生成生产提示
-            Vue.config.warnHandler = (msg, vm, trace)=> {
-                monitor.push({
-                    title: msg,
-                    info:`错误源自：${trace} 错误`
-                });
-            };
-            Vue.config.errorHandler = (err, vm, info)=> {
-                let name = 'root instance';
-                if (vm.$root !== vm) {
-                    name = vm._isVue ? vm.$options.name || vm.$options._componentTag : vm.name;
-                    name = (name ? 'component <' + name + '>' : 'anonymous component') + (vm._isVue && vm.$options.__file ? ' at ' + vm.$options.__file : '');
-                }
-                monitor.push({
-                    title:`VUE组件：${name} 源自：${info} 错误`,
-                    info: err.message ? err.name + ':' + err.message : err
-                });
-            };
-            Object.defineProperty(Vue.prototype, '$monitor', { value: monitor });
-        }
-    }
+if (typeof module !== "undefined") {
+    module.exports = monitor;
 }

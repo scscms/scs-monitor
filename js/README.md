@@ -2,6 +2,14 @@
 
 ### 使用方法
 
+- js_monitor.js 兼容低版本浏览器IE8+
+- monitor.js 高版本浏览器使用
+在项目里引用上面两个文件中的其中一个：
+
+```
+<script type="text/javascript" src="js_monitor.js"></script>
+```
+
 #### 初始化init
 
 ```
@@ -26,11 +34,28 @@ monitor.init({
 
 ```
 monitor.push({
-            title: '错误标题',
-            info: '错误详情',
-            url:'错误来源页（可选）为空时自动取location.href值'
-        })
+    title: '错误标题',
+    info: '错误详情',
+    url:'错误来源页（可选）为空时自动取location.href值'
+})
 ```
+#### 捕捉try错误日志：
+
+```
+try{
+    let a = b + 1;
+    if(a){
+        throw Error("手动抛出错误");
+    }
+}catch(e){
+    this.$monitor.push({
+        title: e.message,
+        info: e.stack
+    });
+    console.error('捕捉有误：',e.stack)
+}
+```
+注意：此处默认获取js自身错误。如果需要手动抛出错误，请使用`throw Error("something");`而不要使用`throw "something";`
 
 #### 添加API请求耗时日志（新）：
 
@@ -72,5 +97,3 @@ Vue.use(monitor);
 #### 调用方法：
 
 参考上面方法，把`monitor`替换成`this.$monitor`即可。
-
-非特殊原因请不要调用this.$monitor.beacon()全量上报或this.$monitor.beacon(obj)单条日志上报，节省请求。
