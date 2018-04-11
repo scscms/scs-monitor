@@ -8,11 +8,14 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
-import store from './store/';//本地存储
+import store from './store/index';//本地存储
 import {storage} from 'utils';
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
+
+import monitor from '../js/vue_monitor';
+Vue.use(monitor);
 
 import routes from './routes.js';
 
