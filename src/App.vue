@@ -1,29 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <transition name="bounce">
+            <router-view></router-view>
+        </transition>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  name: 'app',
+  watch: {
+    $route(to, from) {
+      if (!to.matched.length) {
+        this.$router.push('/404')
+      }
     }
   }
 }
+</script>
+
+<style lang="less">
+    .bounce-enter-active {
+        animation: bounce-in .5s;
+        -webkit-animation:bounce-in .5s;
+    }
+
+    .bounce-leave-active {
+        animation: bounce-out .2s;
+        -webkit-animation: bounce-out .2s;
+    }
+
+    @keyframes bounce-in {
+        0% {transform: scale(0)}
+        50% {transform: scale(1.05)}
+        100% {transform: scale(1)}
+    }
+
+    @keyframes bounce-out {
+        0% {transform: scale(1)}
+        50% {transform: scale(0.95)}
+        100% {transform: scale(0)}
+    }
 </style>
