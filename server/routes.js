@@ -193,7 +193,7 @@ async function verify(ctx) {
 }
 
 // 定时器 自动首屏测试
-schedule.scheduleJob({ hour: 11, minute: 57, second: 23 }, async() => {
+schedule.scheduleJob({ hour: 11, minute: 1, second: 13 }, async() => {
   let arr = common.project_list
   for (let i = arr.length; i--;) {
     await api.sendPuppeteer(arr[i])

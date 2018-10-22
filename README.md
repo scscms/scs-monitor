@@ -16,11 +16,16 @@
 
 ### 安装
 
+请先执行CMD命令(告诉puppeteer安装时不要下载Chromium)。然后克隆项目并安装：
+
 ```
+set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+
 git clone https://github.com/scscms/scs-monitor.git
 
 npm install
 ```
+然后去`https://github.com/scscms/Chrome`下载`Chromium.rar`并解压在本项目里，并核验`server/api.js`第26行文件地址是否正确。
 
 - mysql数据库
 

@@ -6,7 +6,7 @@ import fs from 'fs'
 import jwt from 'jsonwebtoken'
 import common from './common'
 import nodemailer from 'nodemailer'
-import puppeteer from 'puppeteer-cn'
+import puppeteer from 'puppeteer'
 
 async function sendPipe(ctx) {
   let url = ctx.request.body.url
@@ -23,6 +23,7 @@ async function sendPipe(ctx) {
 // 自动首屏测试
 async function sendPuppeteer(url) {
   const browser = await puppeteer.launch({
+    executablePath: './Chromium/chrome.exe', // chrome浏览器地址
     timeout: 15000, // 设置超时时间,
     headless: false,
     ignoreHTTPSErrors: true // 如果是访问https页面 此属性会忽略https错误,
